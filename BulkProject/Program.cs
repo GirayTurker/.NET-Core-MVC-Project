@@ -5,6 +5,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
+Console.WriteLine(".NET START");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment() || app.Environment.IsProduction())
