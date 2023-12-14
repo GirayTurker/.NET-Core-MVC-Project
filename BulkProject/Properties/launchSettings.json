@@ -19,7 +19,7 @@
       }
     },
 
-    //NOT FOR USE PURPOSES ============
+    //NOT FOR USE PURPOSES =============
     "https:Production": {
       "commandName": "Project",
       "dotnetRunMessages": true,
@@ -29,7 +29,7 @@
         "ASPNETCORE_ENVIRONMENT": "Production"
       }
     },
-    //=======================
+    //========================
 
     "https": {
       "commandName": "Project",
