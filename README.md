@@ -1,6 +1,5 @@
 # BulkProject
 
-
 # Dependencies
   
  Frameworks
@@ -9,3 +8,8 @@
   
  Packages
   - Microsoft.ApplicationInsights.AspNetCore(2.2.1.0)
+
+ Launch
+   - http://localhost:####
+   - https://localhost:####
+   - IIS Express
