@@ -18,6 +18,19 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
+
+    //NOT FOR USE PURPOSES ============
+    "https:Production": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5192",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    //=======================
+
     "https": {
       "commandName": "Project",
       "dotnetRunMessages": true,
