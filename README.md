@@ -1,10 +1,11 @@
 # BulkProject
 
+
 # Dependencies
   
-  # Frameworks
+ Frameworks
   - Microsoft.AspNetCore.App
   - Microsoft.NETCore.App
   
-  # Packages
+ Packages
   - Microsoft.ApplicationInsights.AspNetCore(2.2.1.0)
