@@ -10,6 +10,6 @@
   - Microsoft.ApplicationInsights.AspNetCore(2.2.1.0)
 
  Launch
-   - http://localhost:####
-   - https://localhost:####
+   - http://localhost:5064
+   - https://localhost:7169 https://localhost:5190
    - IIS Express
