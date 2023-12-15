@@ -14,9 +14,13 @@ namespace BulkProject.Controllers
         {
             _db = db;
         }
+
+        //Action controller to show Categories DbContext as a list 
         public IActionResult Index()
         {
+            //Create list of DbContext Categories to initialize with View model
             List<Category> categoryListObj = _db.Categories.ToList();
+            //Pass category objects in DbContext to corresponded View model 
             return View(categoryListObj);
         }
     }
