@@ -12,6 +12,7 @@ namespace BulkProject.Data
         }
 
         //Automatically create table for Categories in SQL database
+        //Package Manager Console command update-database
         public DbSet<Category> Categories { get; set; }
     }
 }
