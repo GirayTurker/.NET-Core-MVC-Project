@@ -14,5 +14,14 @@ namespace BulkProject.Data
         //Automatically create table for Categories in SQL database
         //Package Manager Console command update-database
         public DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(
+                new Category { Id = 1, DisplayOrder = 1, Name = "Electronics" },
+                new Category { Id = 2, DisplayOrder = 2, Name = "Clothing" },
+                new Category { Id = 3, DisplayOrder = 3, Name = "Food" }
+                );
+        }
     }
 }
