@@ -1,8 +1,14 @@
+using BulkProject.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddApplicationInsightsTelemetry();
+//Add Entity Framework service and change dynamically connect to defined SQL server  
+builder.Services.AddDbContext<ApplicationDbContext>
+    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 Console.WriteLine(".NET START");
