@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BulkProject.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BulkProject.Data
 {
@@ -9,5 +10,8 @@ namespace BulkProject.Data
         {
             
         }
+
+        //Automatically create table for Categories in SQL database
+        public DbSet<Category> Categories { get; set; }
     }
 }
