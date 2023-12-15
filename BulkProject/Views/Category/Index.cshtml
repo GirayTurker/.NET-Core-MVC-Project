@@ -5,9 +5,21 @@
     @*To view this page go https://localhost:7274/category/index*@
     ViewData["Title"] = "Category List";
 }
-<h1>@ViewData["Title"]</h1>
+<div class ="container">
+    <div class ="row pt-4 pb-4">
+        <div class="col-6">
+            <h2 class="text-primary">@ViewData["Title"]</h2>
+        </div>
+        <div class ="col-6 text-end">
+            <a asp-controller="" asp-action="" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> New Category
+            </a>
+        </div>
+    </div>
+        
+</div>
 
-<p>Use this page for Category list.</p>
+
 
 <table class="table table-bordered table-striped">
     <tr>
