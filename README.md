@@ -9,9 +9,6 @@
   - Microsoft AspNetCore V="2.22.0"
   - Microsoft EntityFrameworkCore "V=8.0.0"
   
- Packages
-  - Microsoft.ApplicationInsights.AspNetCore(2.2.1.0)
-
  # Properties
     
  Launch
