@@ -23,5 +23,11 @@ namespace BulkProject.Controllers
             //Pass category objects in DbContext to corresponded View model 
             return View(categoryListObj);
         }
+
+        //New action method for new category addition
+        public IActionResult CreateCategory()
+        {
+            return View();
+        }
     }
 }
