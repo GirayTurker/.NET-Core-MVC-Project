@@ -17,7 +17,7 @@ namespace BulkProject.Controllers
         public IActionResult Index()
         {
             List<Category> categoryListObj = _db.Categories.ToList();
-            return View();
+            return View(categoryListObj);
         }
     }
 }

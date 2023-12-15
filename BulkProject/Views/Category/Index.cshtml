@@ -1,4 +1,7 @@
-﻿@{
+﻿@*Define view model controller for category*@
+@*To read database and initialize corresponding View content*@
+@model List<Category>
+@{
     @*To view this page go https://localhost:7274/category/index*@
     ViewData["Title"] = "Category List";
 }
@@ -15,4 +18,13 @@
             Display Order
         </th>
     </tr>
+    <tbody>
+        @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+        {
+            <tr>
+                <td>@obj.Name</td>
+                <td>@obj.DisplayOrder</td>
+            </tr>
+        }
+    </tbody>
 </table>
