@@ -2,23 +2,23 @@
 <form method="post">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 calss ="text-primar">Create Category</h2>
+            <h2 class ="text-primary p-0">Create Category</h2>
             <hr/>
         </div>
-        <div class="mb-3">
-            <label>Category Name</label>
-            <input type="text" class="form-control" />
+        <div class="mb-3 row">
+            <label asp-for="Name" class="p-1"></label>
+            <input asp-for="Name" class="form-control" />
         </div>
-        <div class="mb-3">
-            <label>Display Order</label>
-            <input type="text" class="form-control" />
+        <div class="mb-3 row">
+            <label asp-for="DisplayOrder" class="p-1"></label>
+            <input asp-for="DisplayOrder" class="form-control" />
         </div>
         <div class=row>
-            <div class ="col-2">
-                <button type="submit" class="btn btn-primary form-control">Create</button>
+            <div class ="col-3">
+                <button type="submit" class="btn btn-primary form-control row">Create</button>
             </div>
-            <div class="col-2">
-                <a asp-controller="Category" asp-action="Index" class="btn btn-secondary border form-control">Back</a>
+            <div class="col-3">
+                <a asp-controller="Category" asp-action="Index" class="btn btn-secondary border form-control row">Back</a>
             </div>
         </div>
     </div>

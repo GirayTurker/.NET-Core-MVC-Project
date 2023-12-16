@@ -29,5 +29,13 @@ namespace BulkProject.Controllers
         {
             return View();
         }
+
+        //Invoked when posted with +New Category through http
+        //Create new Category Object
+        [HttpPost]
+        public IActionResult CreateCategory(Category obj)
+        {
+            return View();
+        }
     }
 }
