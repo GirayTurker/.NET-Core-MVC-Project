@@ -15,6 +15,7 @@
             <input asp-for="DisplayOrder" class="form-control"/>
             <span asp-validation-for="DisplayOrder" class="text-danger"></span>
         </div>
+        <div asp-validation-summary="All"></div>
         <div class=row>
             <div class ="col-3">
                 <button type="submit" class="btn btn-primary form-control row">Create</button>
@@ -25,3 +26,9 @@
         </div>
     </div>
 </form>
+
+@*Partial View*@
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

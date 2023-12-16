@@ -36,6 +36,16 @@ namespace BulkProject.Controllers
         [HttpPost]
         public IActionResult CreateCategory(Category obj)
         {
+            //Custom validations for Name Field
+            if (obj.Name == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("Name", "Display Order can not be same as Name");
+            }
+            else if (int.TryParse(obj.Name, out int intValue))
+            {
+                ModelState.AddModelError("Name", "Name can not be a number");
+            }
+            
             //Check all validations 
             if (ModelState.IsValid) 
             { 
