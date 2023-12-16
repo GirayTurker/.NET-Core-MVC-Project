@@ -38,6 +38,7 @@ namespace BulkProject.Controllers
             //Point to SQL database to add created obj
             _db.Categories.Add(obj);
             //Add and save it to SQL database
+            _db.SaveChanges();
             return View();
         }
     }
