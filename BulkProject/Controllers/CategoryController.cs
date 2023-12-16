@@ -35,6 +35,8 @@ namespace BulkProject.Controllers
         [HttpPost]
         public IActionResult CreateCategory(Category obj)
         {
+            //Add category object to category table in SQL server
+            _db.Categories.Add(obj);
             return View();
         }
     }
