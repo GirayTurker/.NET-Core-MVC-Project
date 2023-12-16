@@ -15,6 +15,7 @@ namespace BulkProject.Controllers
             _db = db;
         }
 
+
         //Action controller to show Categories DbContext as a list 
         public IActionResult Index()
         {
@@ -35,11 +36,19 @@ namespace BulkProject.Controllers
         [HttpPost]
         public IActionResult CreateCategory(Category obj)
         {
-            //Point to SQL database to add created obj
-            _db.Categories.Add(obj);
-            //Add and save it to SQL database
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            //Check all validations 
+            if (ModelState.IsValid) 
+            { 
+                //Point to SQL database to add created obj
+                _db.Categories.Add(obj);
+                //Add and save it to SQL database
+                _db.SaveChanges();
+                //Redirect to View to category Index page
+                return RedirectToAction("Index");
+            }
+
+            return View();
+            
         }
     }
 }
