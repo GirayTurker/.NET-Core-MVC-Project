@@ -39,7 +39,7 @@ namespace BulkProject.Controllers
             _db.Categories.Add(obj);
             //Add and save it to SQL database
             _db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
