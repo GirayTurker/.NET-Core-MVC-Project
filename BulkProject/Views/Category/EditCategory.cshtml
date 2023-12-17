@@ -1,0 +1,35 @@
+﻿@model Category
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary p-0">Edit Category</h2>
+            <hr />
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="Name" class="p-1"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row">
+            <label asp-for="DisplayOrder" class="p-1"></label>
+            <input asp-for="DisplayOrder" class="form-control" />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class=row>
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary form-control row">Update</button>
+            </div>
+            <div class="col-3">
+                <a asp-controller="Category" asp-action="Index" class="btn btn-secondary border form-control row">Back to List</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@*Partial View*@
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
