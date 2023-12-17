@@ -54,6 +54,8 @@ namespace BulkProject.Controllers
                 _db.Categories.Add(obj);
                 //Add and save it to SQL database
                 _db.SaveChanges();
+                //TempData
+                TempData["success"] = "Category created successfully";
                 //Redirect to View to category Index page
                 return RedirectToAction("Index");
             }
@@ -98,6 +100,8 @@ namespace BulkProject.Controllers
                 _db.Categories.Update(obj);
                 //Add and save it to SQL database
                 _db.SaveChanges();
+                //TempData
+                TempData["success"] = "Category Updated successfully";
                 //Redirect to View to category Index page
                 return RedirectToAction("Index");
             }
@@ -146,8 +150,10 @@ namespace BulkProject.Controllers
            _db.Categories.Remove(obj);
            //Add and save it to SQL database
            _db.SaveChanges();
-           //Redirect to View to category Index page
-           return RedirectToAction("Index");
+            //TempData
+            TempData["success"] = "Category Deleted successfully";
+            //Redirect to View to category Index page
+            return RedirectToAction("Index");
         }
 
     }
