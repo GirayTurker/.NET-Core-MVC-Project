@@ -1,4 +1,4 @@
-using BulkProject.Models;
+using Bulk.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

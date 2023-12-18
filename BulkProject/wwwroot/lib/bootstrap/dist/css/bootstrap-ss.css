@@ -2147,6 +2147,8 @@ progress {
 
     .table > tbody {
         vertical-align: inherit;
+        caret-color: transparent;
+        outline: none;
     }
 
     .table > thead {

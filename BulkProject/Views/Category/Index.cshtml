@@ -5,11 +5,11 @@
     @*To view this page go https://localhost:7274/category/index*@
     ViewData["Title"] = "Category List";
 }
-<div class ="card shadow border-0 mt-4">
+<div class="card shadow border-0 mt-4 caret-color: transparent; outline: none;">
     <div class ="card-header bg-secondary bg-gradient m-lg-0 py-3">
         <div class="row">
             <div class="text-center">
-                <h2 class="text-white py-2">@ViewData["Title"]</h2>
+                <h2 class="text-white py-2 caret-color: transparent; outline: none;">@ViewData["Title"]</h2>
             </div>     
         </div>    
     </div>
@@ -20,9 +20,9 @@
     </div> *@
 </div>
 
-<div class="card-body mt-4">
-    <div class="form-floating">
-        <table class="table table-striped">
+<div class="card-body mt-4 caret-color: transparent; outline: none;">
+    <div class="form-floating caret-color: transparent; outline: none;">
+        <table class="table table-striped caret-color: transparent; outline: none;">
             <tr>
                 <th class="  align-middle">
                     Id
@@ -47,7 +47,7 @@
     
             @foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
             {
-                <tr>
+    <tr caret-color: transparent; outline: none;>
                     <td class="border align-middle fw-bold">@obj.Id</td>
                     <td class="border text-center align-middle">@obj.Name</td>
                     <td class="border text-center align-middle">@obj.DisplayOrder pcs</td>

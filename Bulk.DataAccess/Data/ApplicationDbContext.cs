@@ -1,7 +1,8 @@
-﻿using BulkProject.Models;
+﻿
+using Bulk.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BulkProject.Data
+namespace Bulk.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,11 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BulkProject.Data;
-using BulkProject.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.EntityFrameworkCore;
-using BulkProject.Controllers;
-using System.Linq;
-
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Bulk.DataAccess.Data;
 namespace BulkProject.Tests
 {
     [TestClass]

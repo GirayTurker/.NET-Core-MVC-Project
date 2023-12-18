@@ -21,4 +21,9 @@
     <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bulk.DataAccess\Bulk.DataAccess.csproj" />
+    <ProjectReference Include="..\Bulk.Models\Bulk.Models.csproj" />
+  </ItemGroup>
+
 </Project>

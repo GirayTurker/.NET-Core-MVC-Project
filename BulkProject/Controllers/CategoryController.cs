@@ -1,7 +1,6 @@
-﻿using BulkProject.Data;
-using BulkProject.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Bulk.DataAccess.Data;
+using Bulk.Models;
 
 namespace BulkProject.Controllers
 {
