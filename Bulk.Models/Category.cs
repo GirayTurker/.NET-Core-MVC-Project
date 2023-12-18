@@ -17,7 +17,7 @@ namespace Bulk.Models
         //Data Annotation
         [DisplayName("Display Order")]
         //Data Validation
-        [Range(1,10, ErrorMessage ="Display Order must be between 1-10")]
+        [Range(1,100, ErrorMessage ="Display Order must be between 1-100")]
         public int DisplayOrder { get; set; }
         
         

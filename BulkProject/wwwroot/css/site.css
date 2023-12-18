@@ -60,7 +60,7 @@ html {
 }
 
 .text-primary {
-    color: #192E2F !important;
+    color: #20334a !important;
 }
 
 .text-success {
@@ -68,11 +68,11 @@ html {
 }
 
 .bg-primary {
-    background-color: #192E2F !important;
+    background-color: #20334a !important;
 }
 
 .bg-secondary {
-    background-color: #3A595C !important;
+    background-color: #20334e !important;
 }
 
 bg-success {
@@ -92,16 +92,16 @@ bg-success {
 
 
 .btn-outline-primary {
-    color: #192E2F;
-    border-color: #192E2F;
+    color: #20334a;
+    border-color: #20334a;
 }
 
 
 
     .btn-outline-primary:hover {
         color: #fff;
-        background-color: #192E2F;
-        border-color: #192E2F;
+        background-color: #20334a;
+        border-color: #20334a;
     }
 
 
@@ -115,8 +115,8 @@ bg-success {
     .btn-check:checked + .btn-outline-primary,
     .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
         color: #fff;
-        background-color: #192E2F;
-        border-color: #192E2F;
+        background-color: #20334a;
+        border-color: #20334a;
     }
 
 
@@ -129,7 +129,7 @@ bg-success {
 
 
     .btn-outline-primary:disabled, .btn-outline-primary.disabled {
-        color: #192E2F;
+        color: #20334a;
         background-color: transparent;
     }
 
@@ -229,8 +229,8 @@ bg-success {
 
 .btn-primary {
     color: #fff;
-    background-color: #192E2F;
-    border-color: #192E2F;
+    background-color: #20334a;
+    border-color: #20334a;
 }
 
 

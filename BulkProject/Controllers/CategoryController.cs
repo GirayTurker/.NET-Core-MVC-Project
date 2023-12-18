@@ -71,6 +71,11 @@ namespace BulkProject.Controllers
                 return NotFound();
             }
 
+            if (id !=0)
+            {
+                ModelState.AddModelError("Id", "Id field can NOT change!!");
+            }
+
             //Retrive category by Id from database to edit
             Category? categoryFromDb = _db.Categories.Find(id);
             //other ways to retrive category by Id from database to edit
