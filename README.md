@@ -49,5 +49,5 @@
   - Migration folder should created. Seeded data on <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/Data/ApplicationDbContext.cs"          target="_blank">ApplicationDbContext.cs</a> at OnModelCreating function will be visible in SQL server database.
  
  GitHub Codespace Environment
-  - Open project in Codespace (<a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/opening-an-existing-codespace" target="_blank">Click for how</a>) 
+  - Open project in Codespace (<a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/opening-an-existing-codespace" target="_blank">Click How</a>) 
   - From terminal window, write: "cd ./BulkProject" than, "dotnet run" (Category page is not visible due to implementation database to GitHub) 
