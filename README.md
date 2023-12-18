@@ -38,6 +38,8 @@
 
  # How to Run Version: v-1.2.0
 
+ Local Environment
+  - Download the project
   - Create new database with Microsoft SQL Server Management Studio
   - Change necessary fields at <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/appsettings.json" target="_blank">appsettings.json</a>
   - Remove <a href="https://github.com/GirayTurker/BulkMVCProject/tree/master/BulkProject/Migrations">Migration Folder</a>. User should generate own migration folder.
@@ -45,3 +47,7 @@
   - NuGet Package Manager Console write "add-migration _____" ( ___ reference name of the migration. in this context, it can be anything).
   - NuGet Package Manager Console write "update-database".
   - Migration folder should created. Seeded data on <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/Data/ApplicationDbContext.cs"          target="_blank">ApplicationDbContext.cs</a> at OnModelCreating function will be visible in SQL server database.
+ GitHub Codespace Environment
+  - Open project in Codespace (<a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/opening-an-existing-codespace" target="_blank">Click for    
+    how</a>)
+  - From terminal window, write: "cd ./BulkProject" than, "dotnet run" (Category page is not visible due to implementation database to GitHub) 
