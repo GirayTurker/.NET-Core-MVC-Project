@@ -11,8 +11,7 @@ namespace Bulk.DataAccess.Repository.IRepository
     public interface IRepository <T> where T : class
     {
         // T- Category 
-        // Retrieve all DbContext categories
-        // Update is not added for avoid conflicts. There are many scenarios to update DbContext
+        // Retrieve all DbContext categories  
         IEnumerable<T> GetAll ();
         //Retrieve selected DbContext Category by (Id,Name,etc)
         T Get(Expression<Func<T, bool>> filter);
@@ -22,5 +21,6 @@ namespace Bulk.DataAccess.Repository.IRepository
         void Remove (T entity);
         //Remove multiple from DbContext
         void RemoveRange(IEnumerable<T> entities);
+        // Update is not added for avoid conflicts. There are many scenarios to update DbContext
     }
 }
