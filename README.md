@@ -5,7 +5,9 @@
  privileges are Add, Change or Delete Product Category Name and Category Display Order. Sucscriber privileges are Create account, view Products and pruchase. 
 
 # Feature Implementations
- Short-Term implementations: BulkProject will migrate from local to web base. Product details, purchase chart and payment section will be develop.
+
+ Short-Term: Product details, purchase chart and payment section will be develop. Test cases for individual components and CI/CD pipelines will    develope and add in related repositories. 
+ Long-Term implementations: BulkProject will migrate from local to web base. 
 
 # Architectural Design 
 
