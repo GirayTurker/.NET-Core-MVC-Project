@@ -6,8 +6,9 @@
 
 # Feature Implementations
 
- Short-Term: Product details, purchase chart and payment section will be develop. Test cases for individual components and CI/CD pipelines will    develope and add in related repositories. 
- Long-Term implementations: BulkProject will migrate from local to web base. 
+ - Short-Term: Product details, purchase chart and payment section will be develop. Test cases for individual components and CI/CD pipelines will    develope and add in related repositories.
+ - Long-Term implementations: BulkProject will migrate from local to web base.
+  
 
 # Architectural Design 
 
