@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BulkProject</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-ss.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BulkProject.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 </head>
 <body>
     <header>
@@ -39,6 +40,8 @@
         </nav>
     </header>
     <div class="container">
+        @*Partial View for notifications*@
+        <partial name="_Notification"/>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -46,7 +49,7 @@
 
     <footer class="border-top footer bg-primary text-muted">
         <div class="text-center" style="align-center">
-            &copy; G.T <i class="bi bi-file-earmark-code"></i> - BulkProject - <a style="color:#222222BF" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <span class="text-white">&copy; G.T <i class="bi bi-file-earmark-code"></i> - BulkProject -</span> <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

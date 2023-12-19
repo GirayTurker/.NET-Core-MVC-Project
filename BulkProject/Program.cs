@@ -1,5 +1,8 @@
-using BulkProject.Data;
+using Bulk.DataAccess.Data;
+using Bulk.DataAccess.Repository;
+using Bulk.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,8 @@ builder.Services.AddApplicationInsightsTelemetry();
 //Add Entity Framework service and change dynamically connect to defined SQL server  
 builder.Services.AddDbContext<ApplicationDbContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//New Services registered for Reposiroy  
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 var app = builder.Build();
 //WILL REMOVE. ADDED FOR BEHAVIOR OBSERVATION
