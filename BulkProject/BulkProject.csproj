@@ -3,8 +3,10 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
+	  <!-- Release version 1.1.0-->
 	  <!-- Release version 1.2.0-->
-	  <Version>1.2.0</Version> 
+	  <!-- Release version 1.2.1-->
+	  <Version>1.2.1</Version> 
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
