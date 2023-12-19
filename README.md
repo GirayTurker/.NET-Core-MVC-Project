@@ -11,6 +11,10 @@
 
 <a href="https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/n-tier" target="_blank">N-Tier architecture</a>
 
+# Design Patterns
+
+<a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application#the-repository-and-unit-of-work-patterns" target="_blank">Repository Pattern</a>
+
 # Dependencies
 
  Framework
@@ -34,7 +38,7 @@
    - IIS Express
 
  Version
- - Latest Version <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.0" target="_blank">v-1.2.0</a>
+ - Latest Version <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.1" target="_blank">v-1.2.1</a>
 
  # How to Run Version: v-1.2.0
 
