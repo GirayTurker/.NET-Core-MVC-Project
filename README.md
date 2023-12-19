@@ -38,7 +38,7 @@
    - IIS Express
 
  Version
- - Latest Version <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.1" target="_blank">v-1.2.1</a>
+ - <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.1" target="_blank">v-1.2.1</a>
 
  # How to Run Version: v-1.2.0
 
