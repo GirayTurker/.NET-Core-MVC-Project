@@ -37,10 +37,11 @@
    - https://localhost:7169 https://localhost:5190
    - IIS Express
 
+
  Version
  - <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.1" target="_blank">v-1.2.1</a>
 
- # How to Run Version: v-1.2.0
+ # How to Run Version: All versions
 
   - Create new database with Microsoft SQL Server Management Studio
   - Change necessary fields at <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/appsettings.json" target="_blank">appsettings.json</a>
@@ -49,3 +50,10 @@
   - NuGet Package Manager Console write "add-migration _____" ( ___ reference name of the migration. in this context, it can be anything).
   - NuGet Package Manager Console write "update-database".
   - Migration folder should created. Seeded data on <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/Data/ApplicationDbContext.cs"          target="_blank">ApplicationDbContext.cs</a> at OnModelCreating function will be visible in SQL server database.
+=======
+# Versions
+
+-  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.1.0" target="_blank">v-1.1.1</a>
+-  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.0" target="_blank">v-1.2.0</a>
+-  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.1" target="_blank">v-1.2.1</a>
+
