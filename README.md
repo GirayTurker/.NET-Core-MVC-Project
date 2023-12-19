@@ -45,12 +45,8 @@
 
   - Create new database with Microsoft SQL Server Management Studio
   - Change necessary fields at <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/appsettings.json" target="_blank">appsettings.json</a>
-  - Remove <a href="https://github.com/GirayTurker/BulkMVCProject/tree/master/BulkProject/Migrations">Migration Folder</a>. User should generate own migration folder.
   - Open NuGet Package Manager Console, SELECT Default Project:Bulk.DataAccess and write "update-database" on console. On this step databse table should created and      visible in SQL serer manager, otherwise check for error message on console.
-  - NuGet Package Manager Console write "add-migration _____" ( ___ reference name of the migration. in this context, it can be anything).
-  - NuGet Package Manager Console write "update-database".
-  - Migration folder should created. Seeded data on <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/Data/ApplicationDbContext.cs"          target="_blank">ApplicationDbContext.cs</a> at OnModelCreating function will be visible in SQL server database.
-=======
+ 
 # Versions
 
 -  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.1.0" target="_blank">v-1.1.1</a>
