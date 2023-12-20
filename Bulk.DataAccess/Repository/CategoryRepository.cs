@@ -17,7 +17,6 @@ namespace Bulk.DataAccess.Repository
             _db = db;
         }
         
-
         public void Update(Category obj)
         {
             _db.Update(obj);
