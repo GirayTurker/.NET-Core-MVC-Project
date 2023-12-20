@@ -10,16 +10,16 @@ namespace BulkProject.Controllers
         //Readonly database object variable. 
         //No object created. Already created under Program.cs / Add services (Dependency Injection)
         //private readonly ApplicationDbContext _db;
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly IUnitOfWork _unitOfWork;
         //Retrive data from database to show in page
         //public CategoryController(ApplicationDbContext db) 
         //{
         //    _db = db;
         //}
 
-        public CategoryController(ICategoryRepository db)
+        public CategoryController(IUnitOfWork unitOfWork)
         {
-            _categoryRepository = db;
+            _unitOfWork = unitOfWork;
         }
 
 
@@ -27,7 +27,7 @@ namespace BulkProject.Controllers
         public IActionResult Index()
         {
             //Create list of DbContext Categories to initialize with View model
-            List<Category> categoryListObj = _categoryRepository.GetAll().ToList();
+            List<Category> categoryListObj = _unitOfWork.Category.GetAll().ToList();
             //Pass category objects in DbContext to corresponded View model 
             return View(categoryListObj);
         }
@@ -55,11 +55,11 @@ namespace BulkProject.Controllers
             
             //Check all validations 
             if (ModelState.IsValid) 
-            { 
+            {
                 //Point to SQL database to add created obj
-                _categoryRepository.Add(obj);
+                _unitOfWork.Category.Add(obj);
                 //Add and save it to SQL database
-                _categoryRepository.Save();
+                _unitOfWork.Save();
                 //TempData
                 TempData["success"] = "Category created successfully";
                 //Redirect to View to category Index page
@@ -84,7 +84,7 @@ namespace BulkProject.Controllers
             }
 
             //Retrive category by Id from database to edit (Link operation)
-            Category? categoryFromDb = _categoryRepository.Get(u=>u.Id==id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id==id);
             //other ways to retrive category by Id from database to edit
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
@@ -108,9 +108,9 @@ namespace BulkProject.Controllers
             if (ModelState.IsValid)
             {
                 //Point to SQL database with Id to edit created obj
-                _categoryRepository.Update(obj);
+                _unitOfWork.Category.Update(obj);
                 //Add and save it to SQL database
-                _categoryRepository.Save();
+                _unitOfWork.Save();
                 //TempData
                 TempData["success"] = "Category Updated successfully";
                 //Redirect to View to category Index page
@@ -130,7 +130,7 @@ namespace BulkProject.Controllers
             }
 
             //Retrive category by Id from database to edit
-            Category? categoryFromDb = _categoryRepository.Get(u => u.Id == id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             //other ways to retrive category by Id from database to edit
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
@@ -151,16 +151,16 @@ namespace BulkProject.Controllers
         public IActionResult DeleteCategoryPost(int? id)
         {
             //Create new Category object
-            Category? obj = _categoryRepository.Get(u => u.Id == id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            
-           //Point to SQL database with Id to delete created obj
-           _categoryRepository.Remove(obj);
-           //Add and save it to SQL database
-           _categoryRepository.Save();
+
+            //Point to SQL database with Id to delete created obj
+            _unitOfWork.Category.Remove(obj);
+            //Add and save it to SQL database
+            _unitOfWork.Save();
             //TempData
             TempData["success"] = "Category Deleted successfully";
             //Redirect to View to category Index page

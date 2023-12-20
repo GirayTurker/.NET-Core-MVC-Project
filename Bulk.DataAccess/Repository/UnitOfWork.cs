@@ -9,18 +9,20 @@ using System.Threading.Tasks;
 
 namespace Bulk.DataAccess.Repository
 {
-    public class CategoryRepository : Repository<Category>, ICategoryRepository
+    public class UnitOfWork : IUnitOfWork
     {
+        public ICategoryRepository Category { get; private set; }
+
         private readonly ApplicationDbContext _db;
-        public CategoryRepository(ApplicationDbContext db):base(db) 
+        public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
+            Category = new CategoryRepository(_db);
         }
-        
 
-        public void Update(Category obj)
+        public void Save()
         {
-            _db.Update(obj);
+            _db.SaveChanges();
         }
     }
 }

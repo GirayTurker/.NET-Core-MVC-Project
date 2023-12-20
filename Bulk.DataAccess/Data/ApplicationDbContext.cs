@@ -7,10 +7,7 @@ namespace Bulk.DataAccess.Data
     public class ApplicationDbContext : DbContext
     {
         //Whatever options we configure in Contractor will pass passed to the base class of DbContext
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :base(options) 
-        {
-            
-        }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :base(options){}
 
         //Object-Relational Mapping
         //Automatically create table for Categories in SQL database
