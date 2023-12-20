@@ -3,8 +3,10 @@ using Bulk.DataAccess.Data;
 using Bulk.Models;
 using Bulk.DataAccess.Repository.IRepository;
 
-namespace BulkProject.Controllers
+namespace BulkProject.Areas.Admin.Controllers
 {
+    //User Admin role structural area
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         //Readonly database object variable. 
@@ -52,9 +54,9 @@ namespace BulkProject.Controllers
             {
                 ModelState.AddModelError("Name", "Name can not be a number");
             }
-            
+
             //Check all validations 
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 //Point to SQL database to add created obj
                 _unitOfWork.Category.Add(obj);
@@ -67,7 +69,7 @@ namespace BulkProject.Controllers
             }
 
             return View();
-            
+
         }
 
         //New action method for new category edit
@@ -78,19 +80,19 @@ namespace BulkProject.Controllers
                 return NotFound();
             }
 
-            if (id !=0)
+            if (id != 0)
             {
                 ModelState.AddModelError("Id", "Id field can NOT change!!");
             }
 
             //Retrive category by Id from database to edit (Link operation)
-            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id==id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             //other ways to retrive category by Id from database to edit
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
 
             //Check if corresponding retrive value is null
-            if (categoryFromDb == null) 
+            if (categoryFromDb == null)
             {
                 return NotFound();
             }
@@ -103,7 +105,7 @@ namespace BulkProject.Controllers
         [HttpPost]
         public IActionResult EditCategory(Category obj)
         {
-          
+
             //Check all validations 
             if (ModelState.IsValid)
             {

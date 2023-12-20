@@ -2,8 +2,10 @@ using Bulk.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace BulkProject.Controllers
+namespace BulkProject.Areas.Customer.Controllers
 {
+    //User Customer role structural area
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
