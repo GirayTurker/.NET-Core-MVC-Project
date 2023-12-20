@@ -13,7 +13,7 @@ builder.Services.AddApplicationInsightsTelemetry();
 builder.Services.AddDbContext<ApplicationDbContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 //New Services registered for Reposiroy  
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 //WILL REMOVE. ADDED FOR BEHAVIOR OBSERVATION
