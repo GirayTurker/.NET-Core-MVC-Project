@@ -36,10 +36,14 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category Management</a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Product Management</a>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                @* <li><a class="dropdown-item" href="#">Something else here</a></li> *@
                             </ul>
                         </li>
                     </ul>
@@ -55,7 +59,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer bg-primary text-muted">
+    <footer class="border-top footer bg-primary text-muted position-fixed">
         <div class="text-center" style="align-center">
             <span class="text-white">&copy; G.T <i class="bi bi-file-earmark-code"></i> - BulkProject -</span> <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
