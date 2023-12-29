@@ -56,3 +56,7 @@
 -  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.0" target="_blank">v-1.2.0</a>
 -  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.1" target="_blank">v-1.2.1</a>
 
+#Updates
+
+12/28/2023 - Product Model: New Product Model created with its components for Admin Area, New database and table created, Data migration completed.
+
