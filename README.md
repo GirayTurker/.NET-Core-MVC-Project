@@ -58,5 +58,6 @@
 
 # Updates
 
-12/28/2023 - Product Model: New Product Model created with its components for Admin Area, New database and table created, Data migration completed.
+12/28/2023
+- Product Model: New Product Model created with its components for Admin Area, New database and table created, Data migration completed.
 
