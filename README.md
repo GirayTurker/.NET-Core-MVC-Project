@@ -46,18 +46,23 @@
 
  # How to Run Version: All versions
 
+ Local Environment
+  - Download the project
   - Create new database with Microsoft SQL Server Management Studio
   - Change necessary fields at <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/appsettings.json" target="_blank">appsettings.json</a>
   - Open NuGet Package Manager Console, SELECT Default Project:Bulk.DataAccess and write "update-database" on console. On this step databse table should created and      visible in SQL serer manager, otherwise check for error message on console.
+
+  - NuGet Package Manager Console write "add-migration _____" ( ___ reference name of the migration. in this context, it can be anything).
+  - NuGet Package Manager Console write "update-database".
+  - Migration folder should created. Seeded data on <a href="https://github.com/GirayTurker/BulkMVCProject/blob/master/BulkProject/Data/ApplicationDbContext.cs"          target="_blank">ApplicationDbContext.cs</a> at OnModelCreating function will be visible in SQL server database.
+ 
+ GitHub Codespace Environment
+  - Open project in Codespace (<a href="https://docs.github.com/en/codespaces/developing-in-a-codespace/opening-an-existing-codespace" target="_blank">Click How</a>) 
+  - From terminal window, write: "cd ./BulkProject" than, "dotnet run" (Category page is not visible due to implementation database to GitHub) 
+=======
  
 # Versions
 
 -  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.1.0" target="_blank">v-1.1.1</a>
 -  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.0" target="_blank">v-1.2.0</a>
--  <a href="https://github.com/GirayTurker/BulkMVCProject/tree/v-1.2.1" target="_blank">v-1.2.1</a>
-
-# Updates
-
-12/28/2023
-- Product Model: New Product Model created with its components for Admin Area, New database and table created, Data migration completed.
 
