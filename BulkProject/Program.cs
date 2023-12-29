@@ -1,4 +1,6 @@
 using Bulk.DataAccess.Data;
+using Bulk.DataAccess.Repository;
+using Bulk.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -10,6 +12,8 @@ builder.Services.AddApplicationInsightsTelemetry();
 //Add Entity Framework service and change dynamically connect to defined SQL server  
 builder.Services.AddDbContext<ApplicationDbContext>
     (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//New Services registered for Repository  
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 //WILL REMOVE. ADDED FOR BEHAVIOR OBSERVATION
@@ -32,6 +36,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    //Area added to the route 
+    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

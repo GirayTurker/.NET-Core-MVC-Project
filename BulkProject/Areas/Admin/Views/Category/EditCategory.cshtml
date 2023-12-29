@@ -3,13 +3,18 @@
     <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
         <div class="row">
             <div class="col-12 text-center">
-                <h2 class="text-white py-2">Create Category</h2>
-            </div>     
+                <h2 class="text-white py-2">Edit Category</h2>
+            </div>
         </div>
     </div>
     <div class="card-body p-4">
         <form method="post">
             <div class="border p-3">
+                <div class="mb-3 row">
+                    <label asp-for="Id" class="p-1 fw-bold" style="caret-color: transparent; outline: none;"></label>
+                    <input asp-for="Id" class="form-control fw-bold" style="caret-color: transparent; outline: none;" disabled readonly>
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
                 <div class="mb-3 row">
                     <label asp-for="Name" class="p-1 fw-bold"></label>
                     <input asp-for="Name" class="form-control" />
@@ -20,12 +25,11 @@
                     <input asp-for="DisplayOrder" class="form-control" />
                     <span asp-validation-for="DisplayOrder" class="text-danger"></span>
                 </div>
-                <div asp-validation-summary="All"></div>
                 <div class=row>
-                    <div class="col-3">
-                        <button type="submit" class="btn btn-primary form-control row text-center"><i class="bi bi-plus-circle">Create</i></button>
+                    <div class="col-5">
+                        <button type="submit" class="btn btn-primary form-control row text-center"><i class="bi bi-pencil-square">Update</i></button>
                     </div>
-                    <div class="col-3">
+                    <div class="col-5">
                         <a asp-controller="Category" asp-action="Index" class="btn btn-secondary border form-control row text-center"><i class="bi bi-arrow-clockwise">Back</i></a>
                     </div>
                 </div>
@@ -35,9 +39,9 @@
     </div>
 </div>
 
-
 @*Partial View*@
 @section Scripts
 {
     <partial name="_ValidationScriptsPartial" />
 }
+

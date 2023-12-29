@@ -1,18 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Bulk.DataAccess.Data;
 using Bulk.Models;
+using Bulk.DataAccess.Repository.IRepository;
 
-namespace BulkProject.Controllers
+namespace BulkProject.Areas.Admin.Controllers
 {
+    //User Admin role structural area
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         //Readonly database object variable. 
         //No object created. Already created under Program.cs / Add services (Dependency Injection)
-        private readonly ApplicationDbContext _db;
+        //private readonly ApplicationDbContext _db;
+        private readonly IUnitOfWork _unitOfWork;
         //Retrive data from database to show in page
-        public CategoryController(ApplicationDbContext db) 
+        //public CategoryController(ApplicationDbContext db) 
+        //{
+        //    _db = db;
+        //}
+
+        public CategoryController(IUnitOfWork unitOfWork)
         {
-            _db = db;
+            _unitOfWork = unitOfWork;
         }
 
 
@@ -20,7 +29,7 @@ namespace BulkProject.Controllers
         public IActionResult Index()
         {
             //Create list of DbContext Categories to initialize with View model
-            List<Category> categoryListObj = _db.Categories.ToList();
+            List<Category> categoryListObj = _unitOfWork.Category.GetAll().ToList();
             //Pass category objects in DbContext to corresponded View model 
             return View(categoryListObj);
         }
@@ -45,14 +54,14 @@ namespace BulkProject.Controllers
             {
                 ModelState.AddModelError("Name", "Name can not be a number");
             }
-            
+
             //Check all validations 
-            if (ModelState.IsValid) 
-            { 
+            if (ModelState.IsValid)
+            {
                 //Point to SQL database to add created obj
-                _db.Categories.Add(obj);
+                _unitOfWork.Category.Add(obj);
                 //Add and save it to SQL database
-                _db.SaveChanges();
+                _unitOfWork.Save();
                 //TempData
                 TempData["success"] = "Category created successfully";
                 //Redirect to View to category Index page
@@ -60,7 +69,7 @@ namespace BulkProject.Controllers
             }
 
             return View();
-            
+
         }
 
         //New action method for new category edit
@@ -71,19 +80,19 @@ namespace BulkProject.Controllers
                 return NotFound();
             }
 
-            if (id !=0)
+            if (id != 0)
             {
                 ModelState.AddModelError("Id", "Id field can NOT change!!");
             }
 
-            //Retrive category by Id from database to edit
-            Category? categoryFromDb = _db.Categories.Find(id);
+            //Retrive category by Id from database to edit (Link operation)
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             //other ways to retrive category by Id from database to edit
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
 
             //Check if corresponding retrive value is null
-            if (categoryFromDb == null) 
+            if (categoryFromDb == null)
             {
                 return NotFound();
             }
@@ -96,14 +105,14 @@ namespace BulkProject.Controllers
         [HttpPost]
         public IActionResult EditCategory(Category obj)
         {
-          
+
             //Check all validations 
             if (ModelState.IsValid)
             {
                 //Point to SQL database with Id to edit created obj
-                _db.Categories.Update(obj);
+                _unitOfWork.Category.Update(obj);
                 //Add and save it to SQL database
-                _db.SaveChanges();
+                _unitOfWork.Save();
                 //TempData
                 TempData["success"] = "Category Updated successfully";
                 //Redirect to View to category Index page
@@ -123,7 +132,7 @@ namespace BulkProject.Controllers
             }
 
             //Retrive category by Id from database to edit
-            Category? categoryFromDb = _db.Categories.Find(id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             //other ways to retrive category by Id from database to edit
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
@@ -144,16 +153,16 @@ namespace BulkProject.Controllers
         public IActionResult DeleteCategoryPost(int? id)
         {
             //Create new Category object
-            Category? obj = _db.Categories.Find(id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
             }
-            
-           //Point to SQL database with Id to delete created obj
-           _db.Categories.Remove(obj);
-           //Add and save it to SQL database
-           _db.SaveChanges();
+
+            //Point to SQL database with Id to delete created obj
+            _unitOfWork.Category.Remove(obj);
+            //Add and save it to SQL database
+            _unitOfWork.Save();
             //TempData
             TempData["success"] = "Category Deleted successfully";
             //Redirect to View to category Index page

@@ -1,0 +1,86 @@
+﻿@*Define view model controller for category*@
+@*To read database and initialize corresponding View content*@
+@model List<Product>
+@{
+    @*To view this page go https://localhost:7274/product/index*@
+    ViewData["Title"] = "Product List";
+}
+<div class="card shadow border-0 mt-4 caret-color: transparent; outline: none;">
+    <div class ="card-header bg-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="text-center">
+                <h2 class="text-white py-2 caret-color: transparent; outline: none;">@ViewData["Title"]</h2>
+            </div>     
+        </div>    
+    </div>
+    @* <div class="col-10 text-end">
+        <a asp-controller="Category" asp-action="CreateCategory" class="btn btn-primary">
+            <i class="bi bi-plus-circle"></i> New Category
+        </a>
+    </div> *@
+</div>
+
+<div class="card-body mt-4 pb-5 caret-color: transparent; outline: none;">
+    <div class="form-floating caret-color: transparent; outline: none;">
+        <table class="table table-striped caret-color: transparent; outline: none;">
+            <tr>
+                <th class="align-middle">
+                    Id
+                </th>
+                <th class="text-center align-middle">
+                    Product Title
+                </th>
+                <th class="text-center align-middle">
+                    Product SKU
+                </th>
+                <th class="text-center align-middle">
+                    Product Brand
+                </th>
+                <th class="text-center align-middle">
+                    Price
+                </th>
+                <th class="text-center align-middle">
+                    Price for 2 to 10
+                </th>
+                <th class="text-center align-middle">
+                    Price for 10+
+                </th>
+                <th class=" text-center align-middle">
+                    <a asp-controller="Product" asp-action="CreateProduct" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> New Product
+                    </a>
+                </th>
+
+            </tr>
+            <tbody>
+    </div>
+        
+    </div>
+    
+            @foreach (var obj in Model.OrderBy(u => u.BrandName))
+            {
+    <tr caret-color: transparent; outline: none;>
+                    <td class="border align-middle fw-bold">@obj.Id</td>
+                    <td class="border text-center align-middle">@obj.Title</td>
+                    <td class="border text-center align-middle">@obj.SKU</td>
+                    <td class="border text-center align-middle">@obj.BrandName</td>
+                    <td class="border text-center align-middle">@obj.Price</td>
+                    <td class="border text-center align-middle">@obj.Price2</td>
+                    <td class="border text-center align-middle">@obj.PriceMoreThan10</td>
+                    <td class="text-center">
+                        <div class="w-75 btn-group align-middle" role="group">
+                            <a asp-controller="Product" asp-action="EditProduct" asp-route-Id="@obj.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-controller="Product" asp-action="DeleteProduct" asp-route-Id="@obj.Id" class="btn btn-danger">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
