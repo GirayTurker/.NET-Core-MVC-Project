@@ -33,14 +33,6 @@ namespace BulkProject.Areas.Admin.Controllers
             //Create list of DbContext Categories to initialize with View model
             List<Product> ProductListObj = _unitOfWork.Product.GetAll().ToList();
             
-            //Projection object variable in another object view 
-            //Press F12 while SelectListItem highlighted to see all List Items
-            IEnumerable<SelectListItem>CategoryList = _unitOfWork.Category.GetAll().Select(u=> new SelectListItem
-            {
-              Text =u.Name,
-              Value=u.Id.ToString(),
-            });
-
             //Pass product objects in DbContext to corresponded View model 
             return View(ProductListObj);
         }
@@ -48,6 +40,17 @@ namespace BulkProject.Areas.Admin.Controllers
         //New action method for new category addition
         public IActionResult CreateProduct()
         {
+            //Projection object variable in another object view 
+            //Press F12 while SelectListItem highlighted to see all List Items
+            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString(),
+            });
+            
+            //Pass created Category List to view
+            ViewBag.CategoryList = CategoryList;
+
             return View();
         }
 
