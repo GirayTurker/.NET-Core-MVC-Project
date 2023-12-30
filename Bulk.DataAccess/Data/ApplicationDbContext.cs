@@ -37,6 +37,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 45,
                     PriceMoreThan10 = 40,
                     CategoryId=1,
+                    ImageUrl="",
                 },
                 new Product
                 {
@@ -49,6 +50,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 4.5,
                     PriceMoreThan10 = 4,
                     CategoryId = 1,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -61,6 +63,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 20,
                     PriceMoreThan10 = 15,
                     CategoryId = 1,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -73,6 +76,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 70,
                     PriceMoreThan10 = 65,
                     CategoryId = 1,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -85,6 +89,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 10,
                     PriceMoreThan10 = 7.5,
                     CategoryId = 2,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -97,6 +102,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 120,
                     PriceMoreThan10 = 99,
                     CategoryId = 2,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -109,6 +115,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 230,
                     PriceMoreThan10 = 210,
                     CategoryId = 2,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -121,6 +128,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 320,
                     PriceMoreThan10 = 280,
                     CategoryId = 3,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -133,6 +141,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 7,
                     PriceMoreThan10 = 4,
                     CategoryId = 3,
+                    ImageUrl = "",
                 },
                 new Product
                 {
@@ -145,6 +154,7 @@ namespace Bulk.DataAccess.Data
                     Price2 = 450,
                     PriceMoreThan10 = 400,
                     CategoryId = 3,
+                    ImageUrl = "",
                 });
         }
     }

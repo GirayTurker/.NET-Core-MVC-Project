@@ -44,5 +44,7 @@ namespace Bulk.Models
         //Navigation Property for CategoryId (navigate Id in Category table)
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }
