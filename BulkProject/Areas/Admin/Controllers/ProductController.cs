@@ -2,6 +2,8 @@
 using Bulk.DataAccess.Data;
 using Bulk.Models;
 using Bulk.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace BulkProject.Areas.Admin.Controllers
 {
@@ -30,7 +32,16 @@ namespace BulkProject.Areas.Admin.Controllers
         {
             //Create list of DbContext Categories to initialize with View model
             List<Product> ProductListObj = _unitOfWork.Product.GetAll().ToList();
-            //Pass category objects in DbContext to corresponded View model 
+            
+            //Projection object variable in another object view 
+            //Press F12 while SelectListItem highlighted to see all List Items
+            IEnumerable<SelectListItem>CategoryList = _unitOfWork.Category.GetAll().Select(u=> new SelectListItem
+            {
+              Text =u.Name,
+              Value=u.Id.ToString(),
+            });
+
+            //Pass product objects in DbContext to corresponded View model 
             return View(ProductListObj);
         }
 

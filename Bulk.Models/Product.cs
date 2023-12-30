@@ -38,7 +38,7 @@ namespace Bulk.Models
         [Range(1, 100000)]
         public double? PriceMoreThan10 { get; set; }
 
-
+        [Required]
         public int CategoryId { get; set; }
 
         //Navigation Property for CategoryId (navigate Id in Category table)
