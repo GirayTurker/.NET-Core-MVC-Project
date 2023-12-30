@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bulk.Models
 {
@@ -36,5 +37,12 @@ namespace Bulk.Models
         [Display(Name = "Price for 10+")]
         [Range(1, 100000)]
         public double? PriceMoreThan10 { get; set; }
+
+
+        public int CategoryId { get; set; }
+
+        //Navigation Property for CategoryId (navigate Id in Category table)
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
     }
 }

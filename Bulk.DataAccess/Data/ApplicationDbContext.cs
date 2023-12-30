@@ -35,7 +35,8 @@ namespace Bulk.DataAccess.Data
                     Description="Description-1",
                     Price = 50,
                     Price2 = 45,
-                    PriceMoreThan10 = 40,    
+                    PriceMoreThan10 = 40,
+                    CategoryId=1,
                 },
                 new Product
                 {
@@ -47,6 +48,7 @@ namespace Bulk.DataAccess.Data
                     Price = 5,
                     Price2 = 4.5,
                     PriceMoreThan10 = 4,
+                    CategoryId = 1,
                 },
                 new Product
                 {
@@ -58,6 +60,7 @@ namespace Bulk.DataAccess.Data
                     Price = 25,
                     Price2 = 20,
                     PriceMoreThan10 = 15,
+                    CategoryId = 1,
                 },
                 new Product
                 {
@@ -69,6 +72,7 @@ namespace Bulk.DataAccess.Data
                     Price = 75,
                     Price2 = 70,
                     PriceMoreThan10 = 65,
+                    CategoryId = 1,
                 },
                 new Product
                 {
@@ -80,6 +84,7 @@ namespace Bulk.DataAccess.Data
                     Price = 15,
                     Price2 = 10,
                     PriceMoreThan10 = 7.5,
+                    CategoryId = 2,
                 },
                 new Product
                 {
@@ -91,6 +96,7 @@ namespace Bulk.DataAccess.Data
                     Price = 150,
                     Price2 = 120,
                     PriceMoreThan10 = 99,
+                    CategoryId = 2,
                 },
                 new Product
                 {
@@ -102,6 +108,7 @@ namespace Bulk.DataAccess.Data
                     Price = 255,
                     Price2 = 230,
                     PriceMoreThan10 = 210,
+                    CategoryId = 2,
                 },
                 new Product
                 {
@@ -113,6 +120,7 @@ namespace Bulk.DataAccess.Data
                     Price = 344,
                     Price2 = 320,
                     PriceMoreThan10 = 280,
+                    CategoryId = 3,
                 },
                 new Product
                 {
@@ -124,6 +132,7 @@ namespace Bulk.DataAccess.Data
                     Price = 9,
                     Price2 = 7,
                     PriceMoreThan10 = 4,
+                    CategoryId = 3,
                 },
                 new Product
                 {
@@ -135,6 +144,7 @@ namespace Bulk.DataAccess.Data
                     Price = 500,
                     Price2 = 450,
                     PriceMoreThan10 = 400,
+                    CategoryId = 3,
                 });
         }
     }
