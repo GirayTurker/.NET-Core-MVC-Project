@@ -10,8 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddApplicationInsightsTelemetry();
 //Add Entity Framework service and change dynamically connect to defined SQL server  
+//builder.Services.AddDbContext<ApplicationDbContext>
+//    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); 
 builder.Services.AddDbContext<ApplicationDbContext>
-    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection1")));
 //New Services registered for Repository  
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 

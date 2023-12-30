@@ -1,5 +1,5 @@
 ﻿@model Product
-<div class=" card shadow border-0 mt-4">
+<div class=" card shadow border-0 my-4">
     <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
         <div class="row">
             <div class="col-12 text-center">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-3 row">
                     <label asp-for="Description" class="p-1 fw-bold"></label>
-                    <input asp-for="Description" class="form-control" disabled readonly />
+                    <textarea asp-for="Description" class="form-control" disabled readonly></textarea>
                 </div>
                 <div class="mb-3 row">
                     <label asp-for="Price" class="p-1 fw-bold"></label>
