@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Bulk.DataAccess\Bulk.DataAccess.csproj" />
+    <ProjectReference Include="..\Bulk.Models\Bulk.Models.csproj" />
+    <ProjectReference Include="..\BulkProject\BulkProject.csproj" />
+  </ItemGroup>
+
 </Project>
