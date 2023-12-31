@@ -17,6 +17,7 @@
                 </div>
                 <div class="mb-3 row">
                     <label asp-for="CategoryId" class="p-1 fw-bold">Category</label>
+                    @* switch asp-item="@(ViewData["CategoryList"] as IEnumerable<SelectListItem>)" If use ViewData*@
                     <select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="p-2 form-select shadow">
                         <option class="dropdown-header text-muted" disabled selected>-- Select Category --</option>
                     </select>

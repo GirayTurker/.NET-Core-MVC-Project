@@ -5,11 +5,14 @@ VisualStudioVersion = 17.9.34407.89
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkProject", "BulkProject\BulkProject.csproj", "{C80ED414-DA34-43CB-98FA-B7421A041E66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulk.DataAccess", "Bulk.DataAccess\Bulk.DataAccess.csproj", "{6EF191E6-306F-42AA-9A1E-1443902148CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulk.DataAccess", "Bulk.DataAccess\Bulk.DataAccess.csproj", "{6EF191E6-306F-42AA-9A1E-1443902148CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulk.Models", "Bulk.Models\Bulk.Models.csproj", "{D99FAAB4-B902-41EE-AF88-E26607E5C8EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulk.Models", "Bulk.Models\Bulk.Models.csproj", "{D99FAAB4-B902-41EE-AF88-E26607E5C8EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulk.Utility", "Bulk.Utility\Bulk.Utility.csproj", "{D8159474-B6C4-49D8-A381-A41F4FA14CDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bulk.Utility", "Bulk.Utility\Bulk.Utility.csproj", "{D8159474-B6C4-49D8-A381-A41F4FA14CDF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C80ED414-DA34-43CB-98FA-B7421A041E66} = {C80ED414-DA34-43CB-98FA-B7421A041E66}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

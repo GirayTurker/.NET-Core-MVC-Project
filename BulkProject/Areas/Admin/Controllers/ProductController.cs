@@ -48,7 +48,9 @@ namespace BulkProject.Areas.Admin.Controllers
                 Value = u.Id.ToString(),
             });
             
-            //Pass created Category List to view
+            //Pass created Category List to view with ViewBag
+            //Alternatives:
+            //ViewData ["CategoryList"] = CategoryList;
             ViewBag.CategoryList = CategoryList;
 
             return View();
@@ -104,6 +106,10 @@ namespace BulkProject.Areas.Admin.Controllers
             //other ways to retrive category by Id from database to edit
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u=>u.Id==id).FirstOrDefault();
+
+            //Projection
+            var CategoryList = GenerateCategoryList();
+            ViewBag.CategoryList = CategoryList;
 
             //Check if corresponding retrive value is null
             if (productFromDb == null)
@@ -181,6 +187,16 @@ namespace BulkProject.Areas.Admin.Controllers
             TempData["success"] = "Product Deleted successfully";
             //Redirect to View to category Index page
             return RedirectToAction("Index");
+        }
+
+        //Temporary Category List Generator method (will carry Bulk.Utility)
+        public IEnumerable<SelectListItem> GenerateCategoryList()
+        {
+            return _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString(),
+            });
         }
 
     }
