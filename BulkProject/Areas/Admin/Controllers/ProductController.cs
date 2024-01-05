@@ -4,6 +4,7 @@ using Bulk.Models;
 using Bulk.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
+using Bulk.Models.ViewModels;
 
 namespace BulkProject.Areas.Admin.Controllers
 {
@@ -42,24 +43,35 @@ namespace BulkProject.Areas.Admin.Controllers
         {
             //Projection object variable in another object view 
             //Press F12 while SelectListItem highlighted to see all List Items
-            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
-            {
-                Text = u.Name,
-                Value = u.Id.ToString(),
-            });
-            
+            //IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+            //{
+            //    Text = u.Name,
+            //    Value = u.Id.ToString(),
+            //});
+
             //Pass created Category List to view with ViewBag
             //Alternatives:
             //ViewData ["CategoryList"] = CategoryList;
-            ViewBag.CategoryList = CategoryList;
+            //ViewBag.CategoryList = CategoryList;
 
-            return View();
+            //Created ViewModel for Product and Category, passed to the View
+            ProductVM productVM = new()
+            {
+                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString(),
+                }),
+                Product = new Product()
+            };
+
+            return View(productVM);
         }
 
         //Invoked when posted with +New Category through http
         //Create new Category Object
         [HttpPost]
-        public IActionResult CreateProduct(Product obj)
+        public IActionResult CreateProduct(ProductVM productVM)
         {
             //Custom validations for Name Field
             //if (obj.Name == obj.DisplayOrder.ToString())
@@ -75,7 +87,7 @@ namespace BulkProject.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 //Point to SQL database to add created obj
-                _unitOfWork.Product.Add(obj);
+                _unitOfWork.Product.Add(productVM.Product);
                 //Add and save it to SQL database
                 _unitOfWork.Save();
                 //TempData
@@ -83,9 +95,15 @@ namespace BulkProject.Areas.Admin.Controllers
                 //Redirect to View to category Index page
                 return RedirectToAction("Index");
             }
-
-            return View();
-
+            else 
+            {
+                productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString(),
+                });
+                return View(productVM);
+            }
         }
 
         //New action method for new category edit
