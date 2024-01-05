@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Bulk.Models
 {
@@ -43,8 +44,9 @@ namespace Bulk.Models
 
         //Navigation Property for CategoryId (navigate Id in Category table)
         [ForeignKey("CategoryId")]
+        [ValidateNever]
         public Category Category { get; set; }
-
+        [ValidateNever]
         public string ImageUrl { get; set; }
     }
 }

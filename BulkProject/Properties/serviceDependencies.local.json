@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "appInsights1": {
+      "secretStore": null,
+      "resourceId": null,
       "type": "appInsights.sdk",
-      "dynamicId": null
+      "connectionId": null
     }
   }
 }
